@@ -1,0 +1,25 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+  let kt = false;
+  let ck;
+  if (s.length == t.length) {
+    let i = 0;
+    while (i < s.length) {
+      ck = s.indexOf(t[i]);
+      if (ck >= 0) {
+        let m = t[i];
+        t = t.replace(m, "");
+        s = s.replace(m, "");
+        kt = true;
+      } else {
+        kt = false;
+        break;
+      }
+    }
+  } else return kt;
+  return kt;
+};
